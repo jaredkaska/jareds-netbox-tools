@@ -1,0 +1,12 @@
+This requires pynetbox, please install it or you'll have a bad time.
+
+This script so far is very specific and strange, just for my own use case.
+It takes all the IPs and Devices from Netbox, and looks for serial numbers
+in the descriptions of the IP addresses, and attempts to pair them with
+devices with matching serial numbers on interface 50, and make it the main
+IP of the device.
+
+Since Netbox has IP addresses and Devices as separate objects, it's not
+so easy to import both at the same time, unless you use a custom Python
+script, which I'll probably code at some point in the future. Doing this
+makes my life so much easier when trying to get everything imported.

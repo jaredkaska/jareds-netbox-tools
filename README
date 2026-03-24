@@ -1,12 +1,5 @@
-This requires pynetbox, please install it or you'll have a bad time.
+This is a collection of some of my Netbox scripts that I use in my job. They all require pynetbox to function, so make sure you have that installed.
 
-This script so far is very specific and strange, just for my own use case.
-It takes all the IPs and Devices from Netbox, and looks for serial numbers
-in the descriptions of the IP addresses, and attempts to pair them with
-devices with matching serial numbers on interface 50, and make it the main
-IP of the device.
+assign-ips: This was used when importing all of my devices to Netbox - it's not so easy to import devices with their IP address assigned. So, I imported all IP addresses with the device's serial number as the description of the IP. This script scans all the IPs and descriptions and associates the IP with the corresponding device.
 
-Since Netbox has IP addresses and Devices as separate objects, it's not
-so easy to import both at the same time, unless you use a custom Python
-script, which I'll probably code at some point in the future. Doing this
-makes my life so much easier when trying to get everything imported.
+settoinventory: When I'm bringing in a bunch of inventory of switches, I use a bluetooth barcode scanner and this script allows me to just have the terminal open with this script running and scan all the devices without touching my pc. It's a weird little use case just for me, but very handy.
